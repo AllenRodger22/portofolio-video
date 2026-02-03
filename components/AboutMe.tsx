@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -23,24 +22,26 @@ const AboutMe: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-32 bg-white/40 overflow-hidden">
+    <section id="about" className="py-32 bg-white/40 overflow-hidden relative">
       <div className="max-w-4xl mx-auto px-4 text-center flex flex-col items-center">
-        {/* Section Header */}
+
+        {/* Header Section */}
         <div className="mb-12">
-          <h2 className="text-6xl md:text-7xl font-bold mb-6 text-slate-900 tracking-tighter uppercase">ABOUT ME</h2>
+          <h2 className="text-6xl md:text-7xl font-bold mb-6 text-slate-900 tracking-tighter uppercase">
+            ABOUT ME
+          </h2>
           <div className="h-1.5 w-24 bg-blue-600 rounded-full mx-auto"></div>
         </div>
-        
-        {/* Personal Intro Greeting */}
-        <div className="mb-16 max-w-2xl animate-in fade-in slide-in-from-bottom-4 duration-1000">
+
+        {/* Intro Greeting */}
+        <div className="mb-16 max-w-2xl">
           <p className="text-2xl md:text-3xl font-medium text-slate-800 leading-tight">
-            Hi, I'm <span className="text-blue-600">Rodger</span> and I'm here to bring your channel to the next level with video editing
+            Hi, I'm <span className="text-blue-600">Alan</span> and I'm here to bring your channel to the next level with video editing
           </p>
         </div>
-        
-        {/* Topics Card */}
+
+        {/* Info Cards Container */}
         <div className="glass p-8 md:p-14 rounded-[48px] mb-20 w-full max-w-3xl border-white/60 shadow-2xl shadow-blue-500/10 relative overflow-hidden group">
-          {/* Subtle background glow */}
           <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/10 blur-[80px] rounded-full group-hover:bg-blue-500/20 transition-colors"></div>
           
           <div className="grid gap-8 text-left relative z-10">
@@ -62,27 +63,25 @@ const AboutMe: React.FC = () => {
           </div>
         </div>
 
-        {/* Circular Profile Visual */}
+        {/* Profile Image Component */}
         <div className="relative group cursor-pointer flex flex-col items-center">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl glass mb-8 group-hover:scale-105 transition-all duration-500 ease-out">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl bg-black mb-8 group-hover:scale-105 transition-all duration-500 ease-out">
             <img 
-              src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&q=80&w=800" 
-              alt="Alan Roger Profile Portrait"
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+              src="/alan.jpeg" 
+              alt="Alan Roger" 
+              className="w-full h-full object-cover block"
+              onError={(e) => {
+                const img = e.target as HTMLImageElement;
+                img.style.display = 'none';
+              }}
             />
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {/* Overlay sutil apenas no hover */}
+            <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
           </div>
           
-          {/* Label below the circle */}
           <div className="text-center">
-            <h3 className="text-3xl font-bold text-slate-900 mb-1">Alan Roger</h3>
+            <h3 className="text-3xl font-bold text-slate-900 mb-1 tracking-tight">Alan Roger</h3>
             <p className="text-sm font-bold text-blue-600 uppercase tracking-widest">Short-Form Content Specialist</p>
-          </div>
-
-          {/* Floating Sparkle Effect */}
-          <div className="absolute top-0 right-0 md:-right-8 w-12 h-12 glass rounded-full flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all duration-700 transform group-hover:-translate-y-4">
-            ✨
           </div>
         </div>
       </div>

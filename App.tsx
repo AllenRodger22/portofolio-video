@@ -12,13 +12,11 @@ const ContactModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-      {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-blue-900/20 backdrop-blur-md transition-opacity"
         onClick={onClose}
       />
       
-      {/* Modal Content - Increased width to max-w-xl */}
       <div className="relative glass w-full max-w-xl p-8 md:p-10 rounded-[40px] shadow-2xl border-white/50 animate-in fade-in zoom-in duration-300">
         <button 
           onClick={onClose}
@@ -108,11 +106,13 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 selection:bg-blue-500/20">
+    <div className="min-h-screen bg-white text-slate-800 selection:bg-blue-500/20">
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-[-15%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[150px] rounded-full"></div>
-        <div className="absolute bottom-[-15%] right-[-10%] w-[50%] h-[50%] bg-cyan-500/10 blur-[150px] rounded-full"></div>
-        <div className="absolute top-[40%] left-[30%] w-[20%] h-[20%] bg-sky-400/5 blur-[100px] rounded-full"></div>
+        <div className="absolute inset-0 bg-checkerboard opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-white/20 to-white"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,white_95%)]"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-500/10 blur-[150px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-cyan-500/10 blur-[150px] rounded-full"></div>
       </div>
 
       <main>

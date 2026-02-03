@@ -6,38 +6,41 @@ interface VideoItem {
   id: string;
   youtubeId: string;
   title: string;
-  thumbnail: string;
 }
 
+/** 
+ * EDIT VIDEOS HERE 
+ * Simply change the youtubeId and title. 
+ * Thumbnails will update automatically.
+ */
 const videos: VideoItem[] = [
   {
     id: '1',
-    youtubeId: 'R9_uR9F8Y_E', // Replace with real Roblox Shorts ID
+    youtubeId: 'R9_uR9F8Y_E', 
     title: 'Extreme Obby Run',
-    thumbnail: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=600&h=1067',
   },
   {
     id: '2',
-    youtubeId: 'dQw4w9WgXcQ', // Replace with real Roblox Shorts ID
+    youtubeId: 'dQw4w9WgXcQ', 
     title: 'Bedwars Highlights',
-    thumbnail: 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&q=80&w=600&h=1067',
   },
   {
     id: '3',
-    youtubeId: 'R9_uR9F8Y_E', // Replace with real Roblox Shorts ID
+    youtubeId: 'R9_uR9F8Y_E', 
     title: 'Blox Fruit Tips',
-    thumbnail: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&q=80&w=600&h=1067',
   },
   {
     id: '4',
-    youtubeId: 'dQw4w9WgXcQ', // Replace with real Roblox Shorts ID
+    youtubeId: 'dQw4w9WgXcQ', 
     title: 'Brookhaven RP Story',
-    thumbnail: 'https://images.unsplash.com/photo-1551103782-8ab07afd45c1?auto=format&fit=crop&q=80&w=600&h=1067',
   },
 ];
 
 const VideoGallery: React.FC = () => {
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+
+  // Function to get the YouTube thumbnail automatically
+  const getThumbnail = (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -71,9 +74,9 @@ const VideoGallery: React.FC = () => {
               className="relative w-full h-full cursor-pointer"
               onClick={() => setActiveVideoId(video.id)}
             >
-              {/* Thumbnail Image */}
+              {/* Automatic Thumbnail Image */}
               <img 
-                src={video.thumbnail} 
+                src={getThumbnail(video.youtubeId)} 
                 alt={video.title}
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
