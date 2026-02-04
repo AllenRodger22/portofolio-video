@@ -67,7 +67,7 @@ const AboutMe: React.FC = () => {
         <div className="relative group cursor-pointer flex flex-col items-center">
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl bg-black mb-8 group-hover:scale-105 transition-all duration-500 ease-out">
             <img 
-              src="/alan.jpeg" 
+              src="/alan.png" 
               alt="Alan Roger" 
               className="w-full h-full object-cover block"
               onError={(e) => {
